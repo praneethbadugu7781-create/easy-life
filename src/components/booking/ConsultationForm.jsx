@@ -53,11 +53,11 @@ export default function ConsultationForm() {
         </motion.div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 md:space-y-8">
         {/* Row 1 - Name and Phone */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-900 mb-3">
+            <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
               Full Name *
             </label>
             <input
@@ -67,13 +67,13 @@ export default function ConsultationForm() {
                 minLength: { value: 3, message: 'Name must be at least 3 characters' }
               })}
               placeholder="Enter your full name"
-              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white text-sm md:text-base"
             />
-            {errors.name && <p className="text-red-500 text-sm mt-2">{errors.name.message}</p>}
+            {errors.name && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.name.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-900 mb-3">
+            <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
               Phone Number *
             </label>
             <input
@@ -86,15 +86,15 @@ export default function ConsultationForm() {
                 }
               })}
               placeholder="10-digit phone number"
-              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white text-sm md:text-base"
             />
-            {errors.phone && <p className="text-red-500 text-sm mt-2">{errors.phone.message}</p>}
+            {errors.phone && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.phone.message}</p>}
           </div>
         </div>
 
         {/* Row 2 - Issue */}
         <div>
-          <label className="block text-sm font-semibold text-gray-900 mb-3">
+          <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
             Reason for Consultation *
           </label>
           <textarea
@@ -102,22 +102,22 @@ export default function ConsultationForm() {
               required: 'Please describe your issue',
               minLength: { value: 10, message: 'Please provide details (at least 10 characters)' }
             })}
-            placeholder="Describe your health concern or reason for consultation..."
-            rows="4"
-            className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white resize-none"
+            placeholder="Describe your health concern..."
+            rows="3"
+            className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white resize-none text-sm md:text-base"
           />
-          {errors.issue && <p className="text-red-500 text-sm mt-2">{errors.issue.message}</p>}
+          {errors.issue && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.issue.message}</p>}
         </div>
 
         {/* Row 3 - Doctor and Date */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-900 mb-3">
+            <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
               Preferred Doctor *
             </label>
             <select
               {...register('doctor', { required: 'Please select a doctor' })}
-              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white text-sm md:text-base"
             >
               <option value="">Choose a doctor...</option>
               {DOCTORS.map(doctor => (
@@ -126,11 +126,11 @@ export default function ConsultationForm() {
                 </option>
               ))}
             </select>
-            {errors.doctor && <p className="text-red-500 text-sm mt-2">{errors.doctor.message}</p>}
+            {errors.doctor && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.doctor.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-900 mb-3">
+            <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
               Preferred Date *
             </label>
             <input
@@ -145,48 +145,48 @@ export default function ConsultationForm() {
                 }
               })}
               min={new Date().toISOString().split('T')[0]}
-              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white text-sm md:text-base"
             />
-            {errors.date && <p className="text-red-500 text-sm mt-2">{errors.date.message}</p>}
+            {errors.date && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.date.message}</p>}
           </div>
         </div>
 
         {/* Row 4 - Time */}
         <div>
-          <label className="block text-sm font-semibold text-gray-900 mb-3">
+          <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
             Preferred Time *
           </label>
           <input
             type="time"
             {...register('time', { required: 'Please select a time' })}
-            className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white"
+            className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition bg-white text-sm md:text-base"
           />
-          {errors.time && <p className="text-red-500 text-sm mt-2">{errors.time.message}</p>}
+          {errors.time && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.time.message}</p>}
         </div>
 
         {/* Submit Button */}
-        <div className="flex gap-4 justify-center md:justify-start pt-6">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start pt-4 md:pt-6">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
             disabled={loading}
-            className="bg-blue-600 text-white px-12 py-4 rounded-lg font-semibold hover:bg-blue-700 transition hover:shadow-medium text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full sm:w-auto bg-blue-600 text-white px-6 md:px-12 py-3 md:py-4 rounded-lg font-semibold hover:bg-blue-700 transition hover:shadow-medium text-sm md:text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Booking...' : 'Book Consultation'}
           </motion.button>
           <button
             type="reset"
-            className="border-2 border-gray-300 text-gray-700 px-12 py-4 rounded-lg font-semibold hover:bg-gray-50 transition text-lg"
+            className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-6 md:px-12 py-3 md:py-4 rounded-lg font-semibold hover:bg-gray-50 transition text-sm md:text-lg"
           >
             Clear
           </button>
         </div>
 
         {/* Info Note */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-800">
-          <p className="font-semibold mb-2">📞 Need immediate assistance?</p>
-          <p>Call us directly at <span className="font-bold">8555006448</span> or message us on WhatsApp for urgent consultations.</p>
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 md:p-4 text-xs md:text-sm text-blue-800">
+          <p className="font-semibold mb-1 md:mb-2">📞 Need immediate assistance?</p>
+          <p>Call us at <span className="font-bold">8555006448</span> or WhatsApp for urgent help.</p>
         </div>
       </form>
     </motion.div>

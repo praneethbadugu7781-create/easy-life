@@ -73,16 +73,16 @@ export default function DressingForm() {
         </motion.div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 md:space-y-8">
         {/* Row 1 - Linked Treatment (Optional) */}
         <div>
-          <label className="block text-sm font-semibold text-gray-900 mb-3">
+          <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
             Link to Previous Treatment (Optional)
           </label>
           <select
             {...register('linkedTreatmentId')}
             onChange={handleTreatmentSelect}
-            className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white"
+            className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white text-sm md:text-base"
           >
             <option value="">Select a treatment (or skip)...</option>
             {treatmentBookings.map(booking => (
@@ -92,16 +92,16 @@ export default function DressingForm() {
             ))}
           </select>
           {treatmentBookings.length === 0 && (
-            <p className="text-sm text-gray-600 mt-2 italic">
-              No confirmed treatments available to link. You can still proceed with a new dressing appointment.
+            <p className="text-xs md:text-sm text-gray-600 mt-2 italic">
+              No confirmed treatments available. You can still book a dressing appointment.
             </p>
           )}
         </div>
 
         {/* Row 2 - Name and Phone */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-900 mb-3">
+            <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
               Full Name *
             </label>
             <input
@@ -111,13 +111,13 @@ export default function DressingForm() {
                 minLength: { value: 3, message: 'Name must be at least 3 characters' }
               })}
               placeholder="Enter your full name"
-              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white text-sm md:text-base"
             />
-            {errors.name && <p className="text-red-500 text-sm mt-2">{errors.name.message}</p>}
+            {errors.name && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.name.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-900 mb-3">
+            <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
               Phone Number *
             </label>
             <input
@@ -130,16 +130,16 @@ export default function DressingForm() {
                 }
               })}
               placeholder="10-digit phone number"
-              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white text-sm md:text-base"
             />
-            {errors.phone && <p className="text-red-500 text-sm mt-2">{errors.phone.message}</p>}
+            {errors.phone && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.phone.message}</p>}
           </div>
         </div>
 
         {/* Row 3 - Area and Date */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-900 mb-3">
+            <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
               Area/Issue Needing Dressing *
             </label>
             <textarea
@@ -147,15 +147,15 @@ export default function DressingForm() {
                 required: 'Please describe the area needing dressing',
                 minLength: { value: 5, message: 'Please provide details' }
               })}
-              placeholder="Describe the wound or area that needs dressing..."
+              placeholder="Describe the wound or area..."
               rows="3"
-              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white resize-none"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white resize-none text-sm md:text-base"
             />
-            {errors.area && <p className="text-red-500 text-sm mt-2">{errors.area.message}</p>}
+            {errors.area && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.area.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-900 mb-3">
+            <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
               Preferred Date *
             </label>
             <input
@@ -170,20 +170,20 @@ export default function DressingForm() {
                 }
               })}
               min={new Date().toISOString().split('T')[0]}
-              className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white"
+              className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white text-sm md:text-base"
             />
-            {errors.date && <p className="text-red-500 text-sm mt-2">{errors.date.message}</p>}
+            {errors.date && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.date.message}</p>}
           </div>
         </div>
 
         {/* Row 4 - Select Nurse */}
         <div>
-          <label className="block text-sm font-semibold text-gray-900 mb-3">
+          <label className="block text-sm font-semibold text-gray-900 mb-2 md:mb-3">
             Select Nurse *
           </label>
           <select
             {...register('nurse', { required: 'Please select a nurse' })}
-            className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white"
+            className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg border-2 border-gray-200 focus:border-orange-600 focus:outline-none transition bg-white text-sm md:text-base"
           >
             <option value="">Choose a nurse...</option>
             {NURSES.map(nurse => (
@@ -192,32 +192,32 @@ export default function DressingForm() {
               </option>
             ))}
           </select>
-          {errors.nurse && <p className="text-red-500 text-sm mt-2">{errors.nurse.message}</p>}
+          {errors.nurse && <p className="text-red-500 text-xs md:text-sm mt-1 md:mt-2">{errors.nurse.message}</p>}
         </div>
 
         {/* Submit Button */}
-        <div className="flex gap-4 justify-center md:justify-start pt-6">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start pt-4 md:pt-6">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
             disabled={loading}
-            className="bg-orange-600 text-white px-12 py-4 rounded-lg font-semibold hover:bg-orange-700 transition hover:shadow-medium text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full sm:w-auto bg-orange-600 text-white px-6 md:px-12 py-3 md:py-4 rounded-lg font-semibold hover:bg-orange-700 transition hover:shadow-medium text-sm md:text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Booking...' : 'Book Dressing Appointment'}
           </motion.button>
           <button
             type="reset"
-            className="border-2 border-gray-300 text-gray-700 px-12 py-4 rounded-lg font-semibold hover:bg-gray-50 transition text-lg"
+            className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-6 md:px-12 py-3 md:py-4 rounded-lg font-semibold hover:bg-gray-50 transition text-sm md:text-lg"
           >
             Clear
           </button>
         </div>
 
         {/* Info Note */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-800">
-          <p className="font-semibold mb-2">📞 Need immediate assistance?</p>
-          <p>Call us directly at <span className="font-bold">8555006448</span> or message us on WhatsApp for urgent dressing appointments.</p>
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 md:p-4 text-xs md:text-sm text-blue-800">
+          <p className="font-semibold mb-1 md:mb-2">📞 Need immediate assistance?</p>
+          <p>Call us at <span className="font-bold">8555006448</span> or WhatsApp for urgent help.</p>
         </div>
       </form>
     </motion.div>
