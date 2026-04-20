@@ -102,28 +102,28 @@ export default function Header() {
 
       {/* Mobile Bottom Navigation */}
       <nav className="md:hidden fixed w-full bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-100 shadow-lg">
-        <div className="grid grid-cols-2 gap-2 p-2">
+        <div className="grid grid-cols-2 gap-0 h-20">
           <button
             onClick={() => scrollToSection('services')}
-            className="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-xs font-medium text-gray-700 hover:bg-gray-50 transition"
+            className="text-xs font-medium text-gray-700 hover:bg-gray-50 transition border-r border-gray-100"
           >
             Services
           </button>
           <button
             onClick={() => scrollToSection('doctors')}
-            className="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-xs font-medium text-gray-700 hover:bg-gray-50 transition"
+            className="text-xs font-medium text-gray-700 hover:bg-gray-50 transition"
           >
             Doctors
           </button>
           <button
             onClick={() => scrollToSection('contact')}
-            className="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-xs font-medium text-gray-700 hover:bg-gray-50 transition"
+            className="text-xs font-medium text-gray-700 hover:bg-gray-50 transition border-r border-gray-100 border-t border-gray-100"
           >
             Contact
           </button>
           <button
             onClick={() => scrollToSection('booking-menu')}
-            className="bg-teal-600 rounded-lg px-3 py-2.5 text-xs font-semibold text-white hover:bg-teal-700 transition"
+            className="bg-teal-600 text-xs font-semibold text-white hover:bg-teal-700 transition border-t border-gray-100"
           >
             Book
           </button>
