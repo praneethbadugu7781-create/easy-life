@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Phone } from 'lucide-react'
+import { Phone, Home, Stethoscope, Calendar, Users, Mail, MapPin } from 'lucide-react'
 import { CLINIC_INFO } from '../../constants/clinic'
 
 export default function Header() {
@@ -100,32 +100,36 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Bottom Navigation */}
-      <nav className="md:hidden fixed w-full bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-100 shadow-lg">
-        <div className="grid grid-cols-2 gap-0 h-20">
+      {/* Mobile Bottom Navigation - Icon Based */}
+      <nav className="md:hidden fixed w-full bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200">
+        <div className="grid grid-cols-4 gap-0 px-2 py-2">
+          <button
+            onClick={() => scrollToSection('home')}
+            className="flex flex-col items-center justify-center py-2 text-gray-700 hover:text-teal-600 transition"
+          >
+            <Home size={24} />
+            <span className="text-xs mt-1 font-medium">Home</span>
+          </button>
           <button
             onClick={() => scrollToSection('services')}
-            className="text-xs font-medium text-gray-700 hover:bg-gray-50 transition border-r border-gray-100"
+            className="flex flex-col items-center justify-center py-2 text-gray-700 hover:text-teal-600 transition"
           >
-            Services
+            <Stethoscope size={24} />
+            <span className="text-xs mt-1 font-medium">Services</span>
           </button>
           <button
             onClick={() => scrollToSection('doctors')}
-            className="text-xs font-medium text-gray-700 hover:bg-gray-50 transition"
+            className="flex flex-col items-center justify-center py-2 text-gray-700 hover:text-teal-600 transition"
           >
-            Doctors
-          </button>
-          <button
-            onClick={() => scrollToSection('contact')}
-            className="text-xs font-medium text-gray-700 hover:bg-gray-50 transition border-r border-gray-100 border-t border-gray-100"
-          >
-            Contact
+            <Users size={24} />
+            <span className="text-xs mt-1 font-medium">Doctors</span>
           </button>
           <button
             onClick={() => scrollToSection('booking-menu')}
-            className="bg-teal-600 text-xs font-semibold text-white hover:bg-teal-700 transition border-t border-gray-100"
+            className="flex flex-col items-center justify-center py-2 text-teal-600 hover:text-teal-700 transition"
           >
-            Book
+            <Calendar size={24} />
+            <span className="text-xs mt-1 font-medium">Book</span>
           </button>
         </div>
       </nav>
