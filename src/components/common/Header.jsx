@@ -12,9 +12,9 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white shadow-soft">
+    <>
       {/* Desktop Header */}
-      <div className="hidden md:block">
+      <header className="hidden md:block fixed w-full top-0 z-50 bg-white shadow-soft">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
@@ -75,61 +75,60 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Header */}
-      <div className="md:hidden">
-        <div className="px-3 py-2 flex flex-col gap-2">
-          {/* Top Row - Logo and Phone */}
-          <div className="flex justify-between items-center">
-            <Link to="/" className="flex items-center gap-1.5">
-              <div className="w-8 h-8 bg-gradient-to-br from-teal-600 to-teal-700 rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-sm">E</span>
-              </div>
-              <div>
-                <h1 className="font-display font-bold text-gray-900 text-xs">Easy Life</h1>
-                <p className="text-xs text-teal-600 font-medium leading-tight">Clinic</p>
-              </div>
-            </Link>
+      {/* Mobile Header - Minimal Top Bar */}
+      <header className="md:hidden fixed w-full top-0 z-40 bg-white shadow-soft">
+        <div className="px-4 py-2 flex justify-between items-center">
+          <Link to="/" className="flex items-center gap-1">
+            <div className="w-8 h-8 bg-gradient-to-br from-teal-600 to-teal-700 rounded flex items-center justify-center">
+              <span className="text-white font-bold text-xs">E</span>
+            </div>
+            <div>
+              <h1 className="font-display font-bold text-gray-900 text-xs">Easy Life</h1>
+              <p className="text-xs text-teal-600 font-medium leading-none">Clinic</p>
+            </div>
+          </Link>
 
-            <a
-              href={`tel:${CLINIC_INFO.phone}`}
-              className="flex items-center gap-1 text-teal-600 hover:text-teal-700 font-semibold transition"
-              title="Call us"
-            >
-              <Phone size={18} />
-            </a>
-          </div>
-
-          {/* Navigation and CTA */}
-          <nav className="grid grid-cols-2 gap-1.5">
-            <button
-              onClick={() => scrollToSection('services')}
-              className="w-full text-center px-2 py-1.5 text-xs font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded transition"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('doctors')}
-              className="w-full text-center px-2 py-1.5 text-xs font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded transition"
-            >
-              Doctors
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="w-full text-center px-2 py-1.5 text-xs font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded transition"
-            >
-              Contact
-            </button>
-            <button
-              onClick={() => scrollToSection('booking-menu')}
-              className="w-full text-center px-2 py-1.5 text-xs font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded transition"
-            >
-              Book
-            </button>
-          </nav>
+          <a
+            href={`tel:${CLINIC_INFO.phone}`}
+            className="text-teal-600 hover:text-teal-700 transition"
+            title="Call us"
+          >
+            <Phone size={16} />
+          </a>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="md:hidden fixed w-full bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-100 shadow-lg">
+        <div className="grid grid-cols-2 gap-2 p-2">
+          <button
+            onClick={() => scrollToSection('services')}
+            className="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-xs font-medium text-gray-700 hover:bg-gray-50 transition"
+          >
+            Services
+          </button>
+          <button
+            onClick={() => scrollToSection('doctors')}
+            className="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-xs font-medium text-gray-700 hover:bg-gray-50 transition"
+          >
+            Doctors
+          </button>
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-xs font-medium text-gray-700 hover:bg-gray-50 transition"
+          >
+            Contact
+          </button>
+          <button
+            onClick={() => scrollToSection('booking-menu')}
+            className="bg-teal-600 rounded-lg px-3 py-2.5 text-xs font-semibold text-white hover:bg-teal-700 transition"
+          >
+            Book
+          </button>
+        </div>
+      </nav>
+    </>
   )
 }

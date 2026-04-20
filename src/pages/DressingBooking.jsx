@@ -6,7 +6,7 @@ export default function DressingBooking() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-20">
+      <main className="pt-20 md:pt-0 pb-28 md:pb-0">
         {/* Hero Section */}
         <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-b from-orange-50 to-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
