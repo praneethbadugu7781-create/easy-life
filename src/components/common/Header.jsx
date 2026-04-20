@@ -79,16 +79,16 @@ export default function Header() {
 
       {/* Mobile Header */}
       <div className="md:hidden">
-        <div className="px-4 py-4 flex flex-col gap-4">
+        <div className="px-3 py-2 flex flex-col gap-2">
           {/* Top Row - Logo and Phone */}
           <div className="flex justify-between items-center">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-teal-600 to-teal-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">E</span>
+            <Link to="/" className="flex items-center gap-1.5">
+              <div className="w-8 h-8 bg-gradient-to-br from-teal-600 to-teal-700 rounded-md flex items-center justify-center">
+                <span className="text-white font-bold text-sm">E</span>
               </div>
               <div>
-                <h1 className="font-display font-bold text-gray-900 text-base">Easy Life</h1>
-                <p className="text-xs text-teal-600 font-medium">Clinic</p>
+                <h1 className="font-display font-bold text-gray-900 text-xs">Easy Life</h1>
+                <p className="text-xs text-teal-600 font-medium leading-tight">Clinic</p>
               </div>
             </Link>
 
@@ -97,33 +97,33 @@ export default function Header() {
               className="flex items-center gap-1 text-teal-600 hover:text-teal-700 font-semibold transition"
               title="Call us"
             >
-              <Phone size={20} />
+              <Phone size={18} />
             </a>
           </div>
 
           {/* Navigation and CTA */}
-          <nav className="grid grid-cols-2 gap-2">
+          <nav className="grid grid-cols-2 gap-1.5">
             <button
               onClick={() => scrollToSection('services')}
-              className="w-full text-center px-3 py-2 text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-lg transition"
+              className="w-full text-center px-2 py-1.5 text-xs font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded transition"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('doctors')}
-              className="w-full text-center px-3 py-2 text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-lg transition"
+              className="w-full text-center px-2 py-1.5 text-xs font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded transition"
             >
               Doctors
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="w-full text-center px-3 py-2 text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-lg transition"
+              className="w-full text-center px-2 py-1.5 text-xs font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded transition"
             >
               Contact
             </button>
             <button
               onClick={() => scrollToSection('booking-menu')}
-              className="w-full text-center px-3 py-2 text-sm font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition"
+              className="w-full text-center px-2 py-1.5 text-xs font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded transition"
             >
               Book
             </button>
