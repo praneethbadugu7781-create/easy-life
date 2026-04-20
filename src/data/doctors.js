@@ -5,7 +5,7 @@ export const DOCTORS = [
     qualification: 'MBBS, MS ENT',
     specialty: 'Head and Neck Surgeon',
     experience: '15+ years',
-    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=500&h=500&fit=crop',
+    image: '', // Add your image URL here
     bio: 'Expert in Head and Neck Surgery with extensive experience in surgical care and recovery management.',
     rating: 4.9,
     patients: 2500,
@@ -16,7 +16,7 @@ export const DOCTORS = [
     qualification: 'MBBS, MS General Surgery',
     specialty: 'General Surgeon & Breast Cancer Specialist',
     experience: '18+ years',
-    image: 'https://images.unsplash.com/photo-1559839734033-6461efaf3cef?w=500&h=500&fit=crop',
+    image: '', // Add your image URL here
     bio: 'Fellowship in Breast Cancer Disease. Specialized in general surgery and comprehensive post-operative care.',
     rating: 5.0,
     patients: 3200,

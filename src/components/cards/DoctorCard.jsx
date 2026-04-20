@@ -12,12 +12,19 @@ export default function DoctorCard({ doctor, index }) {
     >
       <div className="bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-premium transition-all duration-300 hover:border-teal-200">
         {/* Image */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-teal-100 to-gray-100 h-96">
-          <img
-            src={doctor.image}
-            alt={doctor.name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-          />
+        <div className="relative overflow-hidden bg-gradient-to-br from-teal-100 to-gray-100 h-96 flex items-center justify-center">
+          {doctor.image ? (
+            <img
+              src={doctor.image}
+              alt={doctor.name}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          ) : (
+            <div className="text-center">
+              <div className="text-6xl mb-2">👨‍⚕️</div>
+              <p className="text-gray-500 font-medium">Image coming soon</p>
+            </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
 
